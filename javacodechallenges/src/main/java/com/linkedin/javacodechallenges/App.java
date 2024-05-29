@@ -5,8 +5,14 @@ import java.util.Scanner;
 public class App {
 
     public static double calculateWaterBill(double gallonsUsage) {
-        // TODO: Implement method
-        return 0;
+        // Minimum charge of $18.84 for 1,496 gallons of water (two CCFs)
+        // Additional CCF is $3.90 each.
+        if (gallonsUsage <= 1496) {
+            return 18.84;
+        }
+        else {
+            return 18.84 + 3.90 * Math.ceil((gallonsUsage - 1496) / 748);
+        }
     }
 
     public static void main(String[] args) {
